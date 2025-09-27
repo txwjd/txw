@@ -1,0 +1,25 @@
+/* bookmark css */
+.bookmark {
+  right: 10px; bottom: 10px;
+  width: 28px; height: 28px;
+  display: grid; place-items: center;
+  padding: 0;
+  border: 0;
+  background: none;                  
+  border-radius: 0;
+  color: #303033;                    /* 기본 아이콘 색 */
+  cursor: pointer;
+  z-index: 2;
+  transition: color .2s ease;
+}
+
+.bookmark.active { color: #22c55e; }   /* 클릭 후 색만 변경 */
+.bookmark svg path { fill: currentColor !important; }
+
+/* search css */
+
+/* notification css */
+
+/* 자주하는 질문 css */
+
+/* 방향키 css */
