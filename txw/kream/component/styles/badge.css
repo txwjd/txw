@@ -1,0 +1,28 @@
+.badge {
+  --badge-color: #303033;
+  --badge-bg: #fff;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+
+  color: var(--badge-color);
+  background: var(--badge-bg);
+  border: 1px solid var(--badge-color);
+}
+
+.badge__icon {
+  width: 14px;
+  height: 14px;
+  fill: currentColor; /* 텍스트 색상과 동기화 */
+}
+
+/* 상태별 */
+.badge--default { --badge-color: #303033; }
+.badge--green   { --badge-color: #0a8754; }
+.badge--red     { --badge-color: #d93025; }
