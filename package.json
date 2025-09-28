@@ -1,0 +1,21 @@
+{
+  "name": "txw",
+  "version": "1.0.0",
+  "description": "1. 각 파일 구조트리 만들기 2. badge component 3. button component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/txwjd/txw.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/txwjd/txw/issues"
+  },
+  "homepage": "https://github.com/txwjd/txw#readme"
+}
