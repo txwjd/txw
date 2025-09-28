@@ -1,25 +1,106 @@
-/* bookmark css */
-.bookmark {
-  right: 10px; bottom: 10px;
-  width: 28px; height: 28px;
-  display: grid; place-items: center;
-  padding: 0;
-  border: 0;
-  background: none;                  
-  border-radius: 0;
-  color: #303033;                    /* 기본 아이콘 색 */
+/* 공통 버튼 스타일 */
+button {
   cursor: pointer;
-  z-index: 2;
-  transition: color .2s ease;
+  border: none;
+  background: none;
+  padding: 0;
 }
 
-.bookmark.active { color: #22c55e; }   /* 클릭 후 색만 변경 */
+/* ==========================
+   Bookmark
+========================== */
+.bookmark {
+  width: 28px; height: 28px;
+  display: grid; place-items: center;
+  color: #303033; /* 기본 아이콘 색 */
+  transition: color .2s ease;
+}
+.bookmark.active { color: #22c55e; }   /* 클릭 시 색 변경 */
 .bookmark svg path { fill: currentColor !important; }
 
-/* search css */
+/* ==========================
+   Search, Notification, FAQ 버튼
+========================== */
+.search,
+.notification,
+.faq-btn {
+  width: auto;
+  padding: 8px 12px;
+  border: 1px solid #333;
+  background: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+  margin: 5px;
+}
 
-/* notification css */
+/* ==========================
+   Modal 기본 스타일
+========================== */
+.modal {
+  display: none; 
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center; 
+  align-items: center;
+  z-index: 1000;
+}
+.modal.active { display: flex; }
 
-/* 자주하는 질문 css */
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  max-width: 90%;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.modal-content input {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.close-btn {
+  position: absolute;
+  top: 10px; right: 10px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
-/* 방향키 css */
+/* ==========================
+   Slider (가상 슬라이드)
+========================== */
+.slider {
+  display: flex;
+  overflow: hidden;
+  width: 300px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+}
+.slide {
+  min-width: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  padding: 40px 0;
+  background: #f0f0f0;
+}
+.slide.active { display: flex; }
+
+/* 화살표 버튼 */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  border-radius: 50%;
+  padding: 5px;
+}
+.arrow.left { left: 10px; }
+.arrow.right { right: 10px; }
