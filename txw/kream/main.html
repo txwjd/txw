@@ -5,57 +5,668 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kream main pages</title>
   <link rel="stylesheet" href="./styles/main.css">
+  <script type="module" src="./main.js"></script>
 </head>
 <body>
   <div class="header">
     <div class="top-01">
+      <img src="./kream/kream-logo.svg" alt="KREAM 로고" class="logo">
 
+      <!-- 알림 버튼 -->
+      <button class="notification" onclick="togglePopup()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_2008_1954)">
+            <path d="M12 22C13.1 22 14 21.1 14 20H10C10 21.1 10.9 22 12 22ZM18 16V11C18 7.93 16.37 5.36 13.5 4.68V4C13.5 3.17 12.83 2.5 12 2.5C11.17 2.5 10.5 3.17 10.5 4V4.68C7.64 5.36 6 7.92 6 11V16L4 18V19H20V18L18 16ZM16 17H8V11C8 8.52 9.51 6.5 12 6.5C14.49 6.5 16 8.52 16 11V17Z" fill="black"/>
+          </g>
+          <defs>
+            <clipPath id="clip0_2008_1954">
+              <rect width="24" height="24" fill="white"/>
+            </clipPath>
+          </defs>
+        </svg>
+      </button>
+
+      <!-- 팝업창 -->
+      <div id="popup" class="popup">
+        <p>메세지가 없습니다.</p>
+        <button class="close-btn" onclick="togglePopup()">×</button>
+      </div>
     </div>
 
     <div class="top-02">
-
+      <ul class="top-menu">
+        <li><button type="button">추천</button></li>
+        <li><button type="button">랭킹</button></li>
+        <li><button type="button">남성</button></li>
+        <li><button type="button">여성</button></li>
+        <li><button type="button">발견</button></li>
+      </ul>
     </div>
   </div>
 
   <div class="main">
     <div class="main-01">
-      <!--  event1  -->
+      <!-- 슬라이드 -->
+      <div class="slider">
+        <button type="button" class="arrow left" aria-label="왼쪽">
+        <svg width="24" height="40" viewBox="0 0 24 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M23.54 3.54L20 0L0 20L20 40L23.54 36.46L7.08 20L23.54 3.54Z" fill="white"/>
+        </svg>
+        </button>
+        <button type="button" class="arrow right" aria-label="오른쪽">
+          <svg width="24" height="40" viewBox="0 0 24 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.459961 36.46L3.99996 40L24 20L3.99996 0L0.459961 3.54L16.92 20L0.459961 36.46Z" fill="white"/>
+          </svg>          
+        </button>
+        <div class="slide active ">
+          <img src="./kream/swiper/webp/sm-slide-01.webp" alt="/">
+        </div>
+        <div class="slide active">
+          <img src="./kream/swiper/webp/sm-slide-02.webp" alt="/">
+        </div>
+        <div class="slide active">
+          <img src="./kream/swiper/webp/sm-slide-03.webp" alt="/">
+        </div>
+      </div>
     </div>
 
     <div class="main-02">
       <!--  Kategorie  -->
+      <!-- shortcut item  -->
+      <div class="shortcut">
+        <ul class="shortcut_menu">
+          <li>
+            <button type="button" class="shortcut-card">
+              <img src="./kream/recommand/original/png/recommand-product-01.png" alt="남자추천" />
+              <span>남자추천</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="shortcut-card">
+              <img src="./kream/recommand/original/png/recommand-product-02.png" alt="여자추천" />
+              <span>여자추천</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="shortcut-card">
+              <img src="./kream/recommand/original/png/recommand-product-03.png" alt="색다른 추천" />
+              <span>색다른 추천</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="shortcut-card">
+              <img src="./kream/recommand/original/png/recommand-product-04.png" alt="정가 아래" />
+              <span>정가아래</span>
+            </button>
+          </li>
+            <li>
+            <button type="button" class="shortcut-card">
+              <img src="./kream/recommand/original/png/recommand-product-05.png" alt="트루릴리전 X 소버" />
+              <span>트루릴리전 X 소버</span>
+            </button>
+          </li>
+        </ul>
+        <ul class="shortcut_menu">
+          <li>
+            <button type="button" class="shortcut-card">
+              <img src="./kream/recommand/original/png/recommand-product-06.png" alt="구해요" />
+              <span>구해요</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="shortcut-card">
+              <img src="./kream/recommand/original/png/recommand-product-07.png" alt="Kream 카드" />
+              <span>Kream 카드</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="shortcut-card">
+              <img src="./kream/recommand/original/png/recommand-product-08.png" alt="봄 출근룩" />
+              <span>봄 출근룩</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="shortcut-card">
+              <img src="./kream/recommand/original/png/recommand-product-09.png" alt="인기 일본 브랜드" />
+              <span>인기 일본 브랜드</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="shortcut-card">
+              <img src="./kream/recommand/original/png/recommand-product-10.png" alt="이유 있는 베스트" />
+              <span>이유 있는 베스트</span>
+            </button>
+          </li>
+        </ul>
+      </div>
     </div>
+    <hr />
 
     <div class="main-03">
       <!-- just dropped  -->
+      <h3>Just Dropped</h3>
+      <p>발매 상품</p>
+      <div class="card-wrapper">
+        <div class="card">
+          <!-- 이미지 영역 -->
+          <div class="card-image">
+            <img src="./kream/just-dropped/png/dropped-product-01.png" alt="Problemallways Cap">
+          </div>
+
+          <!-- 텍스트 영역 -->
+          <div class="card-body">
+            <h3 class="card-title">Problemallways</h3>
+            <p class="card-subtitle">Problemallways Logo Denim Pocket Camp Cap Blue</p>
+            
+            <!-- 배지 -->
+            <div class="badges">
+              <span class="badge">적립</span>
+              <span class="badge green">
+                <svg class="badge__icon" width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <!-- path의 fill을 currentColor로 바꿈 -->
+                  <path d="M9.625 1.16669H5.54167L3.5 7.58335H6.41667L4.375 12.8334H5.25L9.91667 6.41669H7.29167L9.625 1.16669Z" fill="currentColor"/>
+                </svg>
+                빠른배송
+              </span>
+            </div>
+
+            <!-- 가격 영역 -->
+            <div class="price">
+              <span class="discount">10%</span>
+              <span class="sale-price">76,500원</span>
+            </div>
+            <div class="original-price">구매가</div>
+
+            <!-- 북마크 버튼 (본문 하단) -->
+            <button type="button" class="bookmark" aria-label="북마크">
+              <svg width="24" height="25" viewBox="0 0 24 25" fill="none">
+                <path d="M17 3.61621H7C5.9 3.61621 5.01 4.51621 5.01 5.61621L5 21.6162L12 18.6162L19 21.6162V5.61621C19 4.51621 18.1 3.61621 17 3.61621ZM17 18.6162L12 16.4362L7 18.6162V5.61621H17V18.6162Z" fill="currentColor"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <!-- 이미지 영역 -->
+          <div class="card-image">
+            <img src="./kream/just-dropped/png/dropped-product-02.png" alt="Inner Hood Zip-up Black">
+          </div>
+
+          <!-- 텍스트 영역 -->
+          <div class="card-body">
+            <h3 class="card-title">Undermycar</h3>
+            <p class="card-subtitle">Undermycar Mu.22 Anti Fxxking Logo Play Slim Inner Hood Zip-up Black</p>
+            
+            <!-- 배지 -->
+            <div class="badges">
+              <span class="badge">적립</span>
+              <span class="badge green">
+                <svg class="badge__icon" width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <!-- path의 fill을 currentColor로 바꿈 -->
+                  <path d="M9.625 1.16669H5.54167L3.5 7.58335H6.41667L4.375 12.8334H5.25L9.91667 6.41669H7.29167L9.625 1.16669Z" fill="currentColor"/>
+                </svg>
+                빠른배송
+              </span>
+            </div>
+
+            <!-- 가격 영역 -->
+            <div class="price">
+              <span class="sale-price">89,000원</span>
+            </div>
+            <div class="original-price">구매가</div>
+
+            <!-- 북마크 버튼 (본문 하단) -->
+            <button type="button" class="bookmark" aria-label="북마크">
+              <svg width="24" height="25" viewBox="0 0 24 25" fill="none">
+                <path d="M17 3.61621H7C5.9 3.61621 5.01 4.51621 5.01 5.61621L5 21.6162L12 18.6162L19 21.6162V5.61621C19 4.51621 18.1 3.61621 17 3.61621ZM17 18.6162L12 16.4362L7 18.6162V5.61621H17V18.6162Z" fill="currentColor"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <!-- 이미지 영역 -->
+          <div class="card-image">
+            <img src="./kream/just-dropped/png/dropped-product-03.png" alt="Baseball Jersey Navy">
+          </div>
+
+          <!-- 텍스트 영역 -->
+          <div class="card-body">
+            <h3 class="card-title">Supreme</h3>
+            <p class="card-subtitle">Supreme Ultrasuede Mesh Baseball Jersey Navy - 24SS</p>
+            
+            <!-- 배지 -->
+            <div class="badges">
+              <span class="badge">적립</span>
+              <span class="badge green">
+                <svg class="badge__icon" width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <!-- path의 fill을 currentColor로 바꿈 -->
+                  <path d="M9.625 1.16669H5.54167L3.5 7.58335H6.41667L4.375 12.8334H5.25L9.91667 6.41669H7.29167L9.625 1.16669Z" fill="currentColor"/>
+                </svg>
+                빠른배송
+              </span>
+            </div>
+
+            <!-- 가격 영역 -->
+            <div class="price">
+              <span class="sale-price">270,000원</span>
+            </div>
+            <div class="original-price">구매가</div>
+
+            <!-- 북마크 버튼 (본문 하단) -->
+            <button type="button" class="bookmark" aria-label="북마크">
+              <svg width="24" height="25" viewBox="0 0 24 25" fill="none">
+                <path d="M17 3.61621H7C5.9 3.61621 5.01 4.51621 5.01 5.61621L5 21.6162L12 18.6162L19 21.6162V5.61621C19 4.51621 18.1 3.61621 17 3.61621ZM17 18.6162L12 16.4362L7 18.6162V5.61621H17V18.6162Z" fill="currentColor"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <!-- 이미지 영역 -->
+          <div class="card-image">
+            <img src="./kream/just-dropped/png/dropped-product-04.png" alt="nike dunk low PRM Pure Platinum Vivid purple">
+          </div>
+
+          <!-- 텍스트 영역 -->
+          <div class="card-body">
+            <h3 class="card-title">Nike</h3>
+            <p class="card-subtitle">Nike Xx Rayssa Leal SB Dunk Low PRM Pure Platinum Vivid purple</p>
+            
+            <!-- 배지 -->
+            <div class="badges">
+              <span class="badge">적립</span>
+              <span class="badge red">품절</span>
+              <span class="badge green">
+                <svg class="badge__icon" width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <!-- path의 fill을 currentColor로 바꿈 -->
+                  <path d="M9.625 1.16669H5.54167L3.5 7.58335H6.41667L4.375 12.8334H5.25L9.91667 6.41669H7.29167L9.625 1.16669Z" fill="currentColor"/>
+                </svg>
+                빠른배송
+              </span>
+            </div>
+
+            <!-- 가격 영역 -->
+            <div class="price">
+              <span class="sale-price">165,000원</span>
+            </div>
+            <div class="original-price">구매가</div>
+
+            <!-- 북마크 버튼 (본문 하단) -->
+            <button type="button" class="bookmark" aria-label="북마크">
+              <svg width="24" height="25" viewBox="0 0 24 25" fill="none">
+                <path d="M17 3.61621H7C5.9 3.61621 5.01 4.51621 5.01 5.61621L5 21.6162L12 18.6162L19 21.6162V5.61621C19 4.51621 18.1 3.61621 17 3.61621ZM17 18.6162L12 16.4362L7 18.6162V5.61621H17V18.6162Z" fill="currentColor"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <!-- 이미지 영역 -->
+          <div class="card-image">
+            <img src="./kream/just-dropped/png/dropped-product-05.png" alt="Inner Hood Zip-up Gray">
+          </div>
+
+          <!-- 텍스트 영역 -->
+          <div class="card-body">
+            <h3 class="card-title">Undermycar</h3>
+            <p class="card-subtitle">Undermycar Mu.22 Anti Fxxking Logo Play Slim Inner Hood Zip-up Gray</p>
+            
+            <!-- 배지 -->
+            <div class="badges">
+              <span class="badge">적립</span>
+              <span class="badge green">
+                <svg class="badge__icon" width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <!-- path의 fill을 currentColor로 바꿈 -->
+                  <path d="M9.625 1.16669H5.54167L3.5 7.58335H6.41667L4.375 12.8334H5.25L9.91667 6.41669H7.29167L9.625 1.16669Z" fill="currentColor"/>
+                </svg>
+                빠른배송
+              </span>
+            </div>
+
+            <!-- 가격 영역 -->
+            <div class="price">
+              <span class="sale-price">89,000원</span>
+            </div>
+            <div class="original-price">구매가</div>
+
+            <!-- 북마크 버튼 (본문 하단) -->
+            <button type="button" class="bookmark" aria-label="북마크">
+              <svg width="24" height="25" viewBox="0 0 24 25" fill="none">
+                <path d="M17 3.61621H7C5.9 3.61621 5.01 4.51621 5.01 5.61621L5 21.6162L12 18.6162L19 21.6162V5.61621C19 4.51621 18.1 3.61621 17 3.61621ZM17 18.6162L12 16.4362L7 18.6162V5.61621H17V18.6162Z" fill="currentColor"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
+    <hr />
 
     <div class="main-04">
       <!-- top brand -->
+      <h3>Top Brand</h3>
+      <p>인기 탑 브랜드</p>
+      <div class="shortcut">
+        <ul class="shortcut_menu">
+          <li>
+            <button type="button" class="shortcut-card">
+              <img src="./kream/top-brand/original/top-brand-product-01.png" alt="나이키" />
+              <span>나이키</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="shortcut-card">
+              <img src="./kream/top-brand/original/top-brand-product-02.png" alt="아이앱 스튜디오" />
+              <span>아이앱 스튜디오</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="shortcut-card">
+              <img src="./kream/top-brand/original/top-brand-product-03.png" alt="스투시" />
+              <span>스투시</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="shortcut-card">
+              <img src="./kream/top-brand/original/top-brand-product-04.png" alt="크롬하츠" />
+              <span>크롬하츠</span>
+            </button>
+          </li>
+            <li>
+            <button type="button" class="shortcut-card">
+              <img src="./kream/top-brand/original/top-brand-product-05.png" alt="아디다스" />
+              <span>아디다스</span>
+            </button>
+          </li>
+        </ul>
+        <ul class="shortcut_menu">
+          <li>
+            <button type="button" class="shortcut-card">
+              <img src="./kream/top-brand/original/top-brand-product-06.png" alt="칼하트 WIP" />
+              <span>칼하트 WIP</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="shortcut-card">
+              <img src="./kream/top-brand/original/top-brand-product-07.png" alt="베이프" />
+              <span>베이프</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="shortcut-card">
+              <img src="./kream/top-brand/original/top-brand-product-08.png" alt="니들스" />
+              <span>니들스</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="shortcut-card">
+              <img src="./kream/top-brand/original/top-brand-product-09.png" alt="캐피탈" />
+              <span>캐피탈</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="shortcut-card">
+              <img src="./kream/top-brand/original/top-brand-product-10.png" alt="휴먼 메이드" />
+              <span>휴먼 메이드</span>
+            </button>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <div class="main-05">
       <!-- event2  -->
+      <div class="banner">
+        <figure class="banner-01">
+          <img src="./kream/banner/jpg/sm-banner.jpg" alt="/" >
+        </figure>
+      </div>
     </div>
 
     <div class="main-06">
       <!-- event2 Kategorie  -->
+      <h3>편안함에 개성까지</h3>
+      <p>내 맘대로 꾸며신는 매력</p>
+      <div class="card-wrapper">
+        <div class="card">
+          <!-- 이미지 영역 -->
+          <div class="card-image">
+            <img src="./kream/crocs/webp/crocs-product-01.webp" alt="Crocs">
+          </div>
+
+          <!-- 텍스트 영역 -->
+          <div class="card-body">
+            <h3 class="card-title">Crocs</h3>
+            <p class="card-subtitle">Crocs X Levi's All Terrain Clog Bone Blue</p>
+            
+            <!-- 배지 -->
+            <div class="badges">
+              <span class="badge">적립</span>
+              <span class="badge green">
+                <svg class="badge__icon" width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <!-- path의 fill을 currentColor로 바꿈 -->
+                  <path d="M9.625 1.16669H5.54167L3.5 7.58335H6.41667L4.375 12.8334H5.25L9.91667 6.41669H7.29167L9.625 1.16669Z" fill="currentColor"/>
+                </svg>
+                빠른배송
+              </span>
+            </div>
+
+            <!-- 가격 영역 -->
+            <div class="price">
+              <span class="sale-price">120,000원</span>
+            </div>
+            <div class="original-price">즉시 구매가</div>
+
+            <!-- 북마크 버튼 (본문 하단) -->
+            <button type="button" class="bookmark" aria-label="북마크">
+              <svg width="24" height="25" viewBox="0 0 24 25" fill="none">
+                <path d="M17 3.61621H7C5.9 3.61621 5.01 4.51621 5.01 5.61621L5 21.6162L12 18.6162L19 21.6162V5.61621C19 4.51621 18.1 3.61621 17 3.61621ZM17 18.6162L12 16.4362L7 18.6162V5.61621H17V18.6162Z" fill="currentColor"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <!-- 이미지 영역 -->
+          <div class="card-image">
+            <img src="./kream/crocs/webp/crocs-product-02.webp" alt="Crocs">
+          </div>
+
+          <!-- 텍스트 영역 -->
+          <div class="card-body">
+            <h3 class="card-title">Crocs</h3>
+            <p class="card-subtitle">Crocs Classic Metallic Clog Silver</p>
+            
+            <!-- 배지 -->
+            <div class="badges">
+              <span class="badge">적립</span>
+              <span class="badge green">
+                <svg class="badge__icon" width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <!-- path의 fill을 currentColor로 바꿈 -->
+                  <path d="M9.625 1.16669H5.54167L3.5 7.58335H6.41667L4.375 12.8334H5.25L9.91667 6.41669H7.29167L9.625 1.16669Z" fill="currentColor"/>
+                </svg>
+                빠른배송
+              </span>
+            </div>
+
+            <!-- 가격 영역 -->
+            <div class="price">
+              <span class="sale-price">76,500원</span>
+            </div>
+            <div class="original-price">즉시 구매가</div>
+
+            <!-- 북마크 버튼 (본문 하단) -->
+            <button type="button" class="bookmark" aria-label="북마크">
+              <svg width="24" height="25" viewBox="0 0 24 25" fill="none">
+                <path d="M17 3.61621H7C5.9 3.61621 5.01 4.51621 5.01 5.61621L5 21.6162L12 18.6162L19 21.6162V5.61621C19 4.51621 18.1 3.61621 17 3.61621ZM17 18.6162L12 16.4362L7 18.6162V5.61621H17V18.6162Z" fill="currentColor"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <!-- 이미지 영역 -->
+          <div class="card-image">
+            <img src="./kream/crocs/webp/crocs-product-03.webp" alt="Crocs">
+          </div>
+
+          <!-- 텍스트 영역 -->
+          <div class="card-body">
+            <h3 class="card-title">Crocs</h3>
+            <p class="card-subtitle">Crocs X Salehe Bembury Pollex Clog Niagara</p>
+            
+            <!-- 배지 -->
+            <div class="badges">
+              <span class="badge">적립</span>
+              <span class="badge green">
+                <svg class="badge__icon" width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <!-- path의 fill을 currentColor로 바꿈 -->
+                  <path d="M9.625 1.16669H5.54167L3.5 7.58335H6.41667L4.375 12.8334H5.25L9.91667 6.41669H7.29167L9.625 1.16669Z" fill="currentColor"/>
+                </svg>
+                빠른배송
+              </span>
+            </div>
+
+            <!-- 가격 영역 -->
+            <div class="price">
+              <span class="sale-price">120,000원</span>
+            </div>
+            <div class="original-price">즉시 구매가</div>
+
+            <!-- 북마크 버튼 (본문 하단) -->
+            <button type="button" class="bookmark" aria-label="북마크">
+              <svg width="24" height="25" viewBox="0 0 24 25" fill="none">
+                <path d="M17 3.61621H7C5.9 3.61621 5.01 4.51621 5.01 5.61621L5 21.6162L12 18.6162L19 21.6162V5.61621C19 4.51621 18.1 3.61621 17 3.61621ZM17 18.6162L12 16.4362L7 18.6162V5.61621H17V18.6162Z" fill="currentColor"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <!-- 이미지 영역 -->
+          <div class="card-image">
+            <img src="./kream/crocs/webp/crocs-product-04.webp" alt="Crocs">
+          </div>
+
+          <!-- 텍스트 영역 -->
+          <div class="card-body">
+            <h3 class="card-title">Crocs</h3>
+            <p class="card-subtitle">(W) Crocs X Hello Kitty Classic Clog White</p>
+            
+            <!-- 배지 -->
+            <div class="badges">
+              <span class="badge">적립</span>
+              <span class="badge green">
+                <svg class="badge__icon" width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <!-- path의 fill을 currentColor로 바꿈 -->
+                  <path d="M9.625 1.16669H5.54167L3.5 7.58335H6.41667L4.375 12.8334H5.25L9.91667 6.41669H7.29167L9.625 1.16669Z" fill="currentColor"/>
+                </svg>
+                빠른배송
+              </span>
+            </div>
+
+            <!-- 가격 영역 -->
+            <div class="price">
+              <span class="sale-price">90,000원</span>
+            </div>
+            <div class="original-price">즉시 구매가</div>
+
+            <!-- 북마크 버튼 (본문 하단) -->
+            <button type="button" class="bookmark" aria-label="북마크">
+              <svg width="24" height="25" viewBox="0 0 24 25" fill="none">
+                <path d="M17 3.61621H7C5.9 3.61621 5.01 4.51621 5.01 5.61621L5 21.6162L12 18.6162L19 21.6162V5.61621C19 4.51621 18.1 3.61621 17 3.61621ZM17 18.6162L12 16.4362L7 18.6162V5.61621H17V18.6162Z" fill="currentColor"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <!-- 이미지 영역 -->
+          <div class="card-image">
+            <img src="./kream/crocs/webp/crocs-product-05.webp" alt="Crocs">
+          </div>
+
+          <!-- 텍스트 영역 -->
+          <div class="card-body">
+            <h3 class="card-title">Crocs</h3>
+            <p class="card-subtitle">Crocs X Palace Classic Clog Black</p>
+            
+            <!-- 배지 -->
+            <div class="badges">
+              <span class="badge">적립</span>
+              <span class="badge green">
+                <svg class="badge__icon" width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <!-- path의 fill을 currentColor로 바꿈 -->
+                  <path d="M9.625 1.16669H5.54167L3.5 7.58335H6.41667L4.375 12.8334H5.25L9.91667 6.41669H7.29167L9.625 1.16669Z" fill="currentColor"/>
+                </svg>
+                빠른배송
+              </span>
+            </div>
+
+            <!-- 가격 영역 -->
+            <div class="price">
+              <span class="sale-price">120,000원</span>
+            </div>
+            <div class="original-price">즉시 구매가</div>
+
+            <!-- 북마크 버튼 (본문 하단) -->
+            <button type="button" class="bookmark" aria-label="북마크">
+              <svg width="24" height="25" viewBox="0 0 24 25" fill="none">
+                <path d="M17 3.61621H7C5.9 3.61621 5.01 4.51621 5.01 5.61621L5 21.6162L12 18.6162L19 21.6162V5.61621C19 4.51621 18.1 3.61621 17 3.61621ZM17 18.6162L12 16.4362L7 18.6162V5.61621H17V18.6162Z" fill="currentColor"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="footer">
-    <div class="bottom-01">
-      <!-- 고객센터 및 P 요소  -->
-    </div>
+    <!-- 고객센터 및 P 요소  -->
+    <h3 class="center">고객센터 1588-7813</h3>
+    <P>운영시간 평일 10:00 ~ 18:00 (토•일, 공휴일 휴무)</P>
+    <P>점심시간 평일 13:00 ~ 14:00</P>
+    <P>1:1 문의하기는 앱에서만 가능합니다.</P>
 
     <!-- button component 자주 묻는 질문  -->
+     <div class="quest">
+      <button type="button" class="question">자주묻는 질문</button>
+     </div>
 
-    <!-- <ul> 요소  -->
-    
+    <!-- list -->
+    <div class="etc">
+      <div class="etc-01">
+        <h3>이용안내</h3>
+        <li><a href="/">검수기준</a></li>
+        <li><a href="/">이용정책</a></li>
+        <li><a href="/">페널치 정책</a></li>
+        <li><a href="/">커뮤니티 가이드라인</a></li>
+      </div>
+
+      <div class="etc-02">  
+        <h3>고객지원</h3>
+        <li><a href="/">공지사항</a></li>
+        <li><a href="/">서비스 소개</a></li>
+        <li><a href="/">스토어 안내</a></li>
+        <li><a href="/">판매자 방문접수</a></li>
+      </div>
+    </div>
+
+    <hr />
     <!-- sns 연결 -->
+    <div class="sns">
+      <li>
+        <a href="https://www.facebook.com/">
+          <img src="./kream/icon/facebook.svg" alt="페이스북" >
+        </a>
+      </li>
 
-    <!-- p요소 약관 -->
-    
+      <li>
+        <a href="https://www.youtube.com/">
+          <img src="./kream/icon/youtube.svg" alt="유튜브" >
+        </a>
+      </li>
+
+      <li>
+        <a href="https://www.instagram.com/">
+          <img src="./kream/icon/instagram.svg" alt="인스타그램" >
+        </a>
+      </li>
+    </div>
+    <!-- p요소 안내문 -->
+    <p class="notice">크림(주)는 통신판매 중개자로서 통신판매의 당사자가 아닙니다. 본 상품은 개별판매자가 등록한 상품으로 상품, 상품정보, 거래에 관한 의무와 책임은 판매자에게 있습니다. 단, 이용약관 및 정책, 기타 거래 체결 과정에서 고지하는 내용 등에 따라 검수하고 보증하는 내용에 대한 책임은 크림(주)에 있습니다.</p>
   </div>
 </body>
 </html>
