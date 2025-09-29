@@ -78,10 +78,10 @@ button {
 .slider {
   display: flex;
   overflow: hidden;
-  width: 300px;
-  margin-top: 20px;
+  width: 640px;
   border: 1px solid #ccc;
 }
+
 .slide {
   min-width: 100%;
   display: none;

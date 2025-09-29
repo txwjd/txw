@@ -63,6 +63,12 @@ body {
   background: #fff;
 }
 
+.badge.red {
+  color: #d93025;;
+  border-color: #d93025;;
+  background: #fff;
+}
+
 .badge__icon {
   width: 14px;
   height: 14px;
