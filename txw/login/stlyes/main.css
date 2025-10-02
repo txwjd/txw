@@ -1,0 +1,254 @@
+/* 기본 초기화 및 배경 스타일 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #d7e0fb;
+}
+
+/* 전체 폼 박스 (wrapper) */
+.wrapper {
+    position: relative;
+    width: 850px;
+    height: 500px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+/* 폼 컨테이너: 왼쪽 절반을 담당 */
+.form-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    transition: transform 0.6s ease-in-out; 
+}
+
+/* 폼 내부 스타일 (로그인/회원가입) - 겹쳐 놓습니다. */
+.form-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    /* 전환 시 opacity와 z-index를 조절하여 폼을 교체합니다. */
+    transition: opacity 0.6s ease-in-out, z-index 0.6s step-end;
+}
+
+/* 회원가입 폼: 초기에는 숨김 */
+.form-box.sign-up {
+    opacity: 0;
+    z-index: 1; 
+}
+
+/* 로그인 폼: 초기에는 보임 */
+.form-box.sign-in {
+    opacity: 1;
+    z-index: 2; 
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* 인풋 박스 스타일 */
+.input-box {
+    position: relative;
+    width: 100%;
+    margin: 10px 0;
+}
+.input-box input {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    color: #999;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+/* 포커스 시 라벨, 아이콘 색상 변경 */
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+    top: 0;
+    left: 40px;
+    font-size: 12px;
+    color: #6a1b9a;
+}
+.input-box i {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #999;
+    transition: 0.3s;
+}
+.form-box .input-box input:focus ~ i,
+.form-box .input-box input:valid ~ i {
+    color: #6a1b9a;
+}
+
+/* 버튼 스타일 */
+.btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background: #6a1b9a;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.btn:hover {
+    background: #8839c4;
+}
+
+/* 소셜 아이콘 및 링크 스타일 */
+.social-icons {
+    margin-bottom: 10px;
+}
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    text-decoration: none;
+    color: #333;
+}
+.social-text {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 15px;
+}
+.forgot-password {
+    font-size: 12px;
+    color: #6a1b9a;
+    text-decoration: none;
+    margin-top: -10px;
+}
+
+
+/* 전환 패널 스타일 (보라색 배경 부분) */
+.switch-panel-container {
+    position: absolute;
+    top: 0;
+    left: 50%; 
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+}
+
+.switch-panel {
+    position: relative;
+    left: -100%; 
+    width: 200%; 
+    height: 100%;
+    background: #6a1b9a;
+    background-image: linear-gradient(to right, #6a1b9a, #4a148c);
+    transform: translateX(0); 
+    transition: transform 0.6s ease-in-out;
+}
+
+/* 각 전환 박스 (내부 텍스트/버튼) */
+.switch-box {
+    position: absolute;
+    width: 50%; 
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 0 30px;
+    text-align: center;
+    transition: opacity 0.3s ease 0.3s; /* 지연시간을 줘서 폼 이동 후 텍스트가 전환되게 함 */
+}
+
+/* 로그인 화면(초기 화면) - 오른쪽 보라색 박스 (회원가입 유도) */
+.switch-box.switch-sign-up {
+    right: 0;
+    opacity: 1; 
+}
+
+/* 회원가입 화면 - 왼쪽 보라색 박스 (로그인 유도) */
+.switch-box.switch-sign-in {
+    left: 0;
+    opacity: 0; 
+}
+
+.switch-box .transparent {
+    background: transparent;
+    border: 2px solid #fff;
+    width: 150px;
+}
+
+
+/* ==================================== */
+/*       .active 클래스가 추가될 때의 전환     */
+/* ==================================== */
+
+/* 1. 폼 컨테이너를 오른쪽으로 이동 */
+.active .form-container {
+    transform: translateX(100%); 
+}
+
+/* 2. 로그인 폼 숨김, 회원가입 폼 표시 */
+.active .form-box.sign-in {
+    opacity: 0;
+    z-index: 1;
+}
+.active .form-box.sign-up {
+    opacity: 1;
+    z-index: 5;
+}
+
+/* 3. 보라색 패널 컨테이너를 왼쪽으로 이동 */
+.active .switch-panel-container {
+    transform: translateX(-100%); 
+}
+
+/* 4. 보라색 내부 패널을 오른쪽으로 이동 */
+.active .switch-panel {
+    transform: translateX(100%); 
+}
+
+/* 5. 보라색 내부 텍스트 전환 */
+.active .switch-box.switch-sign-up {
+    opacity: 0;
+}
+.active .switch-box.switch-sign-in {
+    opacity: 1;
+}
