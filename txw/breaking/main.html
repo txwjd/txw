@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=\, initial-scale=1.0">
+  <title>breaking</title>
+  <link rel="icon" href="../favicon/wx.ico" type="image/svg" />
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+
+  <div id="game-container">
+        
+    <svg id="game-board" width="800" height="600"></svg>
+        
+    <div id="ui-elements">
+      <button id="pause-button">일시정지</button>
+            
+      <div id="score-board">
+        점수: <span id="score">0</span> | 목숨: <span id="lives">3</span> | 레벨: <span id="level">1</span>
+      </div>
+    </div>
+
+      <div id="game-overlay">
+        <h1 id="overlay-text">SVG 벽돌깨기</h1>
+        <button id="start-button">게임 시작</button>
+      </div>
+        
+  </div>
+
+  <script src="./main.js"></script>
+</body>
+</html>
